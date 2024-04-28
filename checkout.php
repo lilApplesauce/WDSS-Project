@@ -11,14 +11,13 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Retrieve user ID
+// get user ID
 $user_id = $_SESSION['user_id'];
 
 // Check if the form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve form data
     if (isset($_POST['shipping_address1'], $_POST['shipping_address2'], $_POST['card_details'], $_POST['game_id'])) {
-        // Sanitize input data (you should validate and sanitize all input fields)
         $shipping_address1 = $_POST['shipping_address1'];
         $shipping_address2 = $_POST['shipping_address2'];
         $card_details = $_POST['card_details'];
@@ -29,11 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare("INSERT INTO orders (user_id, game_id, shipping_address1, shipping_address2, card_details) VALUES (?, ?, ?, ?, ?)");
             $stmt->execute([$user_id, $game_id, $shipping_address1, $shipping_address2, $card_details]);
 
-            // Redirect to order confirmation page
+            // Redirect to orderConfirm.php
             header("Location: orderConfirm.php");
             exit;
         } catch (PDOException $e) {
-            // Handle database errors
+            // catch database errors
             echo "Database error: " . $e->getMessage();
             exit;
         }
@@ -66,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$game_id]);
         $game = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Display the game name and price
+        // Display  game name, price
         if($game) {
             echo "<p><strong>Game Name:</strong> " . $game['game_name'] . "</p>";
             echo "<p><strong>Price:</strong> $" . $game['game_price'] . "</p>";
@@ -79,9 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ?>
 </div>
 
+
+
 <form method="post" action="">
-    <!-- Form fields for shipping address, payment method, etc. -->
-    <!-- Example: -->
+
     <label for="shipping_address1">Address Line 1: </label>
     <input type="text" id="shipping_address1" name="shipping_address1" required><br><br>
 
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label for="card_details">Card Number: </label>
     <input type="tel" pattern="[0-9\s]{13,19}" id="card_details" name="card_details" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required><br><br>
 
-    <!-- Hidden input field for game ID -->
+
     <input type="hidden" name="game_id" value="<?php echo isset($_POST['game_id']) ? $_POST['game_id'] : ''; ?>">
 
     <button type="submit" class="btn btn-lg btn-primary mt-2">Place Order</button>

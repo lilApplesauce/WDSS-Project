@@ -22,11 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             // Verify if user exists and password is correct
             if ($user_data && password_verify($password, $user_data['password'])) {
-                // Authentication successful, set session variables
+                // if verification  successful, set session variables
                 $_SESSION['user_id'] = $user_data['user_id'];
                 $_SESSION['is_admin'] = ($user_data['firstname'] === 'admin'); // Check if firstname is 'admin' for admin
 
-                // Redirect to appropriate page based on admin status
+                // Redirect to index or admin
                 if ($_SESSION['is_admin']) {
                     header("Location: adminAccess.php");
                 } else {

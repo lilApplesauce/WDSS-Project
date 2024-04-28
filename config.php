@@ -5,9 +5,9 @@
  */
 $host = "localhost";
 $username = "root";
-$password = "root";
-$database = "g2gwebsite"; // will use later
-$dsn = "mysql:host=$host;dbname=$database"; // will use later
+$password = "root"; //make sure to change to "root" or "" .
+$database = "g2gwebsite";
+$dsn = "mysql:host=$host;dbname=$database";
 $options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 );

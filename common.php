@@ -5,11 +5,11 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 } catch (PDOException $e) {
-    // Handle connection error
+    // catch connection error
     die("Connection failed: " . $e->getMessage());
 }
 
-// Define the escape function (optional)
+// Define the escape function
 function escape($data) {
     if ($data !== null) {
         $data = htmlspecialchars($data, ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8");
@@ -35,18 +35,18 @@ if (isset($_POST['user_name']) && isset($_POST['password'])) {
             // Verify password
             if (password_verify($password, $user_data['password'])) {
                 // Passwords match, authentication successful
-                // Handle authentication success
+
             } else {
                 // Passwords don't match, authentication failed
-                // Handle authentication failure
+
             }
         } else {
             // User not found in the database
-            // Handle user not found
+
         }
     } else {
         // Username or password is empty
-        // Handle empty input
+
     }
 }
 ?>

@@ -10,7 +10,7 @@ function check_login($pdo)
 
         $query = "SELECT * FROM users WHERE user_id = ? LIMIT 1";
         $stmt = $pdo->prepare($query);  //prepare sql statement
-        $stmt->execute([$id]);  //execute the stmt with userid as param
+        $stmt->execute([$id]);  //execute the stmt with user_id as param
         $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user_data) {   //if user data is retrieved
@@ -23,7 +23,7 @@ function check_login($pdo)
     exit;
 }
 
-// for user id also obeselete i think
+// for user id rng, not obsolete
 function random_num($length)
 {
 

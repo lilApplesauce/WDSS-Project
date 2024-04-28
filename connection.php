@@ -1,15 +1,15 @@
 <?php
 
-$host = "localhost"; // Or your database host
-$username = "root"; // Your database username
-$password = "root"; // Your database password
-$database = "g2gwebsite"; // Your database name
+$host = "localhost";
+$username = "root";
+$password = "root"; // make sure to change to "root" or "".
+$database = "g2gwebsite";
 
 $connection = new PDO("mysql:host=$host;dbname=$database", $username, $password);
 $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-// Create a PDO DSN (Data Source Name) string
+// Create a PDO DSN string
 $dsn = "mysql:host=$host;dbname=$database";
 
 // PDO options array

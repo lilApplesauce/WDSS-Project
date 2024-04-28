@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-// Include connection file
+//
 include 'connection.php';
 
-// Function to get game information by ID
+//  get game information by ID
 function getGameInfo($game_id, $pdo) {
     $stmt = $pdo->prepare("SELECT * FROM games WHERE game_id = ?");
     $stmt->execute([$game_id]);
@@ -14,7 +14,7 @@ function getGameInfo($game_id, $pdo) {
 // Get game ID from query parameter or default to 1
 $game_id = isset($_GET['game_id']) ? $_GET['game_id'] : 1;
 
-// Get game information
+// Get game info
 $game = getGameInfo($game_id, $pdo);
 $gameStock = $game["game_stock"];
 ?>

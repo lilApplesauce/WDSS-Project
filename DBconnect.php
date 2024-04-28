@@ -1,5 +1,5 @@
 <?php
-require_once '../config.php'; //access the login values
+require_once '../config.php'; //OBSOLETE I THINK, DONT USE
 try {
     $connection = new PDO($host, $username, $password, $options);
     echo 'DB connected';

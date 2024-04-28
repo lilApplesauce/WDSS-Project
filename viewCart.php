@@ -1,4 +1,4 @@
-<?php
+<?php   //OBSOLETE NOT USING
 session_start();
 
 // Include the database connection file
