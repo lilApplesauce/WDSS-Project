@@ -27,7 +27,7 @@ session_start();
 
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             // Save to database
-            $user_id = random_num(20);
+            $user_id = random_num(10);
 
             // Using PDO for database connection and prepared statements
             $query = "INSERT INTO users (user_id, firstname, lastname, email, age, location, password) VALUES (?, ?, ?, ?, ?, ?, ?)";

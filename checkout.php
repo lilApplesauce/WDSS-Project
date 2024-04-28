@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // For example, display an error message or redirect back to the checkout page
         // This depends on your specific requirements
         echo "Error: Form submission data missing.";
-        exit;
+
     }
 }
 ?>

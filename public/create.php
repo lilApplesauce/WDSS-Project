@@ -1,8 +1,8 @@
 <?php
 if (isset($_POST['submit'])) {
-    require "common.php";
+    require "../common.php";
     try {
-        require_once 'connection.php';
+        require_once '../connection.php';
         $new_user = array(
             "firstname" => escape($_POST['firstname']),
             "lastname" => escape($_POST['lastname']),

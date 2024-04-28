@@ -52,6 +52,10 @@ $gameStock = $game["game_stock"];
             border: none;
             cursor: pointer;
         }
+
+        img {
+            border: 5px solid #555;
+        }
     </style>
 </head>
 <body background="images/grey.png">
@@ -86,6 +90,6 @@ $gameStock = $game["game_stock"];
     </div>
 </div>
 </body>
-<?php include('Layout/Footer.php'); ?>
+<?php include('public/templates/footertemplate.html'); ?>
 </html>
 
