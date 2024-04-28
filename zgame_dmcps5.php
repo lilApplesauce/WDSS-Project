@@ -54,7 +54,7 @@ $gameStock = $game["game_stock"];
         }
     </style>
 </head>
-<body>
+<body background="images/grey.png">
 <div class="container">
     <div class="image-container">
         <img src="images/dmc5PS5.jpg" alt="Product Image">

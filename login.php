@@ -76,14 +76,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     #box{
 
-        background-color: grey;
-        margin: auto;
+        background-color: darkslategrey;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
         width: 300px;
         padding: 20px;
     }
 
 </style>
-
+<body background="images/grey.png">
 <div id="box">
 
     <form method="post">

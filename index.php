@@ -4,10 +4,10 @@ session_start();
 // Check if the user is logged in
 if (isset($_SESSION['user_id'])) {
     // If logged in, display the logout button
-    echo '<form method="post"><input type="submit" name="logout" value="Logout"></form>';
+    include ("Layout/HeaderLogout.php");
 } else {
     // If not logged in, display the login button
-    echo '<a href="login.php">Login</a>';
+    include ("Layout/Header.php");
 }
 
 
@@ -32,12 +32,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['logout'])) {
 
 <!DOCTYPE html>
 <html>
-<?php include('Layout/Header.php'); ?>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Store</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="html/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="html/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="html/css/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="html/css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="html/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="html/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+</head>
     <style>
         /* Basic styling */
         body {
@@ -80,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['logout'])) {
         }
     </style>
 </head>
-<body>
+<body background="images/grey.png">
 <!-- Slider -->
 <div class="slider">
     <div class="slider-content">

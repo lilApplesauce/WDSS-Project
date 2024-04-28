@@ -10,9 +10,9 @@
     </style>
 </head>
 <body class="grey lighten-4">
-<nav class="white z-depth-0">
+<nav class="black z-depth-0">
     <div class="container">
-        <a href="index.php"  class="brand-logo brand-text">Games 2 Go</a>
+        <a href="../index.php"><img src="../images/G2G.png" style="width: 250px;height: 60px"></a>
         <ul id="nav-mobile" class="right hide-on-small-and-down">
         </ul>
     </div>
