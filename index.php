@@ -98,6 +98,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['logout'])) {
             height: auto;
             cursor: pointer;
         }
+
+        img {
+            border: 5px solid #555;
+        }
+
+
+
     </style>
 </head>
 <body background="images/grey.png">
@@ -107,6 +114,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['logout'])) {
         <!-- You can add your slide images here -->
         <img src="images/SHAFT.png" alt="Slide 1">
         <img src="images/STASIS.png" alt="Slide 2">
+        <img src="images/G2G.png" alt="Slide 3">
+        <img src="images/witcher.jpg" alt="Slide 4">
+        <img src="images/bf2042.jpg" alt="Slide 5">
+
     </div>
 </div>
 
@@ -153,5 +164,5 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['logout'])) {
 
 
 
-<?php include('Layout/Footer.php'); ?>
+<?php include('public/templates/footertemplate.html'); ?>
 </html>
