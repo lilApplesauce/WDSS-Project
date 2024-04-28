@@ -2,7 +2,7 @@
 
 $host = "localhost"; // Or your database host
 $username = "root"; // Your database username
-$password = ""; // Your database password
+$password = "root"; // Your database password
 $database = "g2gwebsite"; // Your database name
 
 $connection = new PDO("mysql:host=$host;dbname=$database", $username, $password);

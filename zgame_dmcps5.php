@@ -78,4 +78,5 @@ $game = getGameInfo($game_id, $pdo);
     </div>
 </div>
 </body>
+<?php include('Layout/Footer.php'); ?>
 </html>
