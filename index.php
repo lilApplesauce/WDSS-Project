@@ -86,8 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['logout'])) {
     <div class="slider-content">
         <!-- You can add your slide images here -->
         <img src="images/SHAFT.png" alt="Slide 1">
-       <!-- <img src="images/elisocray_siri.jpg" alt="Slide 2"> -->
-        <img src="images/STASIS.png" alt="Slide 3">
+        <img src="images/STASIS.png" alt="Slide 2">
     </div>
 </div>
 

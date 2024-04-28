@@ -16,6 +16,7 @@ $game_id = isset($_GET['game_id']) ? $_GET['game_id'] : 4;
 
 // Get game information
 $game = getGameInfo($game_id, $pdo);
+$gameStock = $game["game_stock"];
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +61,7 @@ $game = getGameInfo($game_id, $pdo);
     </div>
 
     <div class="details-container">
-        <?php if ($game): ?>
+        <?php if ($gameStock > 0): ?>
             <p>
                 <strong>Game Name:</strong> <?php echo $game["game_name"]; ?><br>
                 <strong>Price:</strong> $<?php echo $game["game_price"]; ?><br>
@@ -73,7 +74,14 @@ $game = getGameInfo($game_id, $pdo);
                 <input type="submit" name="buy_game" value="Buy">
             </form>
         <?php else: ?>
-            <p>Game not found.</p>
+            <p>
+                <strong>Game Name:</strong> <?php echo $game["game_name"]; ?><br>
+                <strong>Price:</strong> $<?php echo $game["game_price"]; ?><br>
+                <strong>Rating:</strong> <?php echo $game["game_rating"]; ?><br>
+                <strong>Category:</strong> <?php echo $game["game_category"]; ?><br>
+                <strong>Stock:</strong> <?php echo $game["game_stock"]; ?><br>
+            </p>
+            <?php echo "We are sorry! The game seems to be out of stock." ?>
         <?php endif; ?>
     </div>
 </div>

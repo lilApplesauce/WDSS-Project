@@ -16,7 +16,6 @@
         <a href="index.php"  class="brand-logo brand-text">Games 2 Go</a>
         <ul id="nav-mobile" class="right hide-on-small-and-down">
             <li><a href="login.php" class="btn brand z-depth-0">Login</a></li>
-            <li><a href="cart.php" class="btn brand z-depth-0">Cart</a></li>
         </ul>
     </div>
 </nav>
